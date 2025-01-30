@@ -8,41 +8,61 @@
     
 </head>
 <body>
-<h1>CONTACT PAGE</h1>
-<h2>tymes ahs tickin' Solutions provides fast and reliable service<br>We specialize in the urgent and time-sensitive transportation of medical specimen phamaceutical and other critical healthcare materials </h2>
-<p>we are on call 24/7 to accommodate those  time-sensitive drop offs<br>unmatched speed and reliability. We guarantee the fastest  delivery time in the region </p>
+<body style="font-family: Arial, sans-serif; margin: 20px;">
 
-<a href="index.html">GO HOME</a></body>
+    <h1 style="color: #0a65a0; text-align: center;">CONTACT PAGE</h1>
 
-<form id="contact-form">
-    <fieldset>
-        <input type="hidden" name="action" value="contact_send" />
+    <h2 style="color: #333; text-align: center; font-size: 18px;">
+        Tymes Ahs Tickin' Solutions provides fast and reliable service<br>
+        We specialize in the urgent and time-sensitive transportation of medical specimens, pharmaceuticals, and other critical healthcare materials.
+    </h2>
 
-        <div class="row">
-            <div class="col-md-4">
-                <label for="name">first Name *</label>
-                <input id="name" required type="text" value="" class="form-control"  first name="contact[name][required]">
-            </div>
-            <div class="col-md-4">
-                <label for="email">last Name *</label>
-                <input id="email" required type="email" value="" class="form-control" name="contact[email][required]">
-            </div>
-            <div class="col-md-4">
-                <label for="phone">email</label>
-                <input id="phone" type="text" value="" class="form-control" name="contact[phone]">
-            </div>
-            <div class="col-md-4">
-                <label for="phone">contact us</label>
-                <input id="phone" type="text" value="" class="form-control" name="contact[phone]">
-            </div>
-        </div>
-        
-    </fieldset>
+    <p style="color: #666; text-align: center; font-size: 16px;">
+        We are on call 24/7 to accommodate those time-sensitive drop-offs.<br>
+        Unmatched speed and reliability. We guarantee the fastest delivery time in the region.
+    </p>
 
-    <div class="row">
-        <div class="col-md-12">
-            <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-check"></i> SEND MESSAGE</button>
-        </div>
+    <div style="text-align: center; margin-bottom: 20px;">
+        <a href="index.html" style="text-decoration: none; background-color: #0a65a0; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px;">
+            GO HOME
+        </a>
     </div>
-</form>
+
+    <form id="contact-form" style="max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+        <fieldset>
+            <input type="hidden" name="action" value="contact_send" />
+
+            <div style="margin-bottom: 15px;">
+                <label for="name" style="font-weight: bold;">First Name *</label><br>
+                <input id="name" required type="text" value="" name="contact[name][required]" 
+                    style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="email" style="font-weight: bold;">Last Name *</label><br>
+                <input id="email" required type="email" value="" name="contact[email][required]" 
+                    style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="phone" style="font-weight: bold;">Email</label><br>
+                <input id="phone" type="text" value="" name="contact[phone]" 
+                    style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="contact" style="font-weight: bold;">Contact Us</label><br>
+                <input id="contact" type="text" value="" name="contact[phone]" 
+                    style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+
+            <div style="text-align: center;">
+                <button type="submit" style="background-color: #0a65a0; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+                    SEND MESSAGE
+                </button>
+            </div>
+        </fieldset>
+    </form>
+
+</body>
 </html>
