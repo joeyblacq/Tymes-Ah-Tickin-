@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body>
+
 <body style="font-family: Arial, sans-serif; margin: 20px;">
 
     <h1 style="color: #0a65a0; text-align: center;">CONTACT PAGE</h1>
 
     <h2 style="color: #333; text-align: center; font-size: 18px;">
-        Tymes Ahs Tickin' Solutions provides fast and reliable service<br>
-        We specialize in the urgent and time-sensitive transportation of medical specimens, pharmaceuticals, and other critical healthcare materials.
+        Tymes Ahs Tickin' Solutions provides fast and reliable service.<br>
+        We specialize in urgent and time-sensitive transportation of medical specimens, pharmaceuticals, and other
+        critical healthcare materials.
     </h2>
 
     <p style="color: #666; text-align: center; font-size: 16px;">
@@ -23,46 +25,77 @@
     </p>
 
     <div style="text-align: center; margin-bottom: 20px;">
-        <a href="index.html" style="text-decoration: none; background-color: #0a65a0; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px;">
-            GO HOME
-        </a>
+        <a href="index.html" class="btn btn-primary">GO HOME</a>
     </div>
 
-    <form id="contact-form" style="max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+    <!-- Alert Messages -->
+    <div id="alert_success" class="alert alert-success d-none">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Thank You!</strong> Your message was successfully sent!
+    </div>
+
+    <div id="alert_failed" class="alert alert-danger d-none">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>[SMTP] Error!</strong> Internal server error!
+    </div>
+
+    <div id="alert_mandatory" class="alert alert-danger d-none">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Sorry!</strong> You need to complete all mandatory (*) fields!
+    </div>
+
+    <!-- Contact Form -->
+    <form id="contact-form"
+        style="max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
         <fieldset>
             <input type="hidden" name="action" value="contact_send" />
 
-            <div style="margin-bottom: 15px;">
-                <label for="name" style="font-weight: bold;">First Name *</label><br>
-                <input id="name" required type="text" value="" name="contact[name][required]" 
-                    style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            <div class="form-group">
+                <label for="company">Company Name *</label>
+                <input id="company" required type="text" class="form-control" name="contact[company]">
             </div>
 
-            <div style="margin-bottom: 15px;">
-                <label for="email" style="font-weight: bold;">Last Name *</label><br>
-                <input id="email" required type="email" value="" name="contact[email][required]" 
-                    style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input id="email" required type="email" class="form-control" name="contact[email]">
             </div>
 
-            <div style="margin-bottom: 15px;">
-                <label for="phone" style="font-weight: bold;">Email</label><br>
-                <input id="phone" type="text" value="" name="contact[phone]" 
-                    style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            <div class="form-group">
+                <label for="phone">Phone #</label>
+                <input id="phone" type="text" class="form-control" name="contact[phone]">
             </div>
 
-            <div style="margin-bottom: 15px;">
-                <label for="contact" style="font-weight: bold;">Contact Us</label><br>
-                <input id="contact" type="text" value="" name="contact[phone]" 
-                    style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            <div class="form-group">
+                <label for="contact_person">Contact Person</label>
+                <input id="contact_person" type="text" class="form-control" name="contact[person]">
             </div>
 
-            <div style="text-align: center;">
-                <button type="submit" style="background-color: #0a65a0; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
-                    SEND MESSAGE
-                </button>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
             </div>
         </fieldset>
     </form>
 
+    <script>
+        $("#contact-form").on("submit", function (event) {
+            event.preventDefault(); // Prevent form submission for demo purposes
+
+            // Simulating form validation (You should handle this in the backend)
+            if ($("#company").val() === "" || $("#email").val() === "") {
+                $("#alert_mandatory").removeClass("d-none");
+                return;
+            }
+
+            // Simulating success response (Replace with actual backend response)
+            $("#alert_success").removeClass("d-none");
+        });
+
+        $(".alert .close").on("click", function () {
+            $(this).parent().addClass("d-none");
+        });
+    </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
